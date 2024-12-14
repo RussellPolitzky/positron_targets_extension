@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode   from 'vscode';
 import * as positron from 'positron';
-
+import { activateOutlineProvider } from './outline_provider';
 
 /**
  * Executes R code in the current R session.
@@ -115,6 +115,10 @@ function executeTargetsDebugSelected(): void {
  * @param context - The extension context.
  */
 export function activate(context: vscode.ExtensionContext): void {
+
+  // Activate the outline plugin.
+  //activateOutlineProvider(context);
+
   let disposableRead                 = vscode.commands.registerCommand('executeTargetsRead'         , executeTargetsRead         );
   let disposableLoad                 = vscode.commands.registerCommand('executeTargetsLoad'         , executeTargetsLoad         );
   let disposableTargetsMakeSelected  = vscode.commands.registerCommand('executeTargetsMakeSelected' , executeTargetsMakeSelected );

@@ -10,11 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:executeTargetsRead",
-    "onCommand:executeTargetsLoad",
-    "onCommand:executeTargetsMakeSelected",
-    "onCommand:executeTargetsMake",
-    "onCommand:executeTargetsDebugSelected"
+    "*"
   ],
   "main": "./out/extension.js",
   "contributes": {

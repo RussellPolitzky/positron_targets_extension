@@ -42,4 +42,6 @@ Steps are as follows:
         }
 }  
 
-* vsce package
+* Create the vsix file which can then be installed:
+
+  vsce package

@@ -37,7 +37,12 @@ class OutlineProvider implements vscode.TreeDataProvider<OutlineItem> {
         const text = editor.document.getText();
         const outlineItems: OutlineItem[] = [];
 
-        const regex = /^(# .+? -+|## .+? -+|### .+? -+)$/gm;
+        // const regex = /^\s*(# .+? -+|## .+? -+|### .+? -+)$/gm;
+
+        const regex = /^\s*#{1,3}tgt.*-{5}.*$/gm;
+
+        
+
         let match;
         while ((match = regex.exec(text)) !== null) {
             const line = editor.document.positionAt(match.index).line;
@@ -68,7 +73,8 @@ class OutlineItem extends vscode.TreeItem {
 }
 
 export function activateOutlineProvider(context: vscode.ExtensionContext) {
-    const outlineProvider = new OutlineProvider(vscode.workspace.rootPath);
+    const workspaceFolder = vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders[0].name : "";
+    const outlineProvider = new OutlineProvider(workspaceFolder);
     vscode.window.registerTreeDataProvider('outlineView', outlineProvider);
     vscode.commands.registerCommand('outlineView.refresh', () => outlineProvider.refresh());
 }

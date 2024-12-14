@@ -110,6 +110,50 @@ function executeTargetsDebugSelected(): void {
 }  
 
 
+class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
+    public provideDocumentSymbols(
+        document: vscode.TextDocument,
+        token: vscode.CancellationToken): Promise<vscode.DocumentSymbol[]> {
+        return new Promise((resolve, reject) => {
+
+            let symbols: vscode.DocumentSymbol[] = [];
+            //const regex = /^(#tgt|##tgt)\s*(.+?)\s*-+$/; // Regex pattern to match lines starting with "#tgt" or "##tgt" and capture the text
+
+            const regex = /^\s*(?<level_indicator>#{1,3})tgt\s*(?<label>\w*)\s*-{4}/;
+            
+
+            for (let i = 0; i < document.lineCount; i++) {
+
+                const line = document.lineAt(i);
+
+                const match = regex.exec(line.text);
+
+                if (match && match.groups) {
+                    
+                    const level = match.groups['level_indicator'].length; // Determine the level based on the number of hashes
+                    const label = match.groups['label'];
+
+                    let symbol = new vscode.DocumentSymbol(
+                        label,
+                        'Target',
+                        vscode.SymbolKind.Function,
+                        line.range,
+                        line.range
+                    );
+
+                    symbols.push(symbol);
+                }
+            }
+
+            resolve(symbols);
+        });
+    }
+}
+
+
+
+
+
 /**
  * Activates the extension.
  * @param context - The extension context.
@@ -118,6 +162,13 @@ export function activate(context: vscode.ExtensionContext): void {
 
   // Activate the outline plugin.
   //activateOutlineProvider(context);
+
+  context.subscriptions.push(
+    vscode.languages.registerDocumentSymbolProvider(
+        {scheme: "file", language: "r"}, 
+        new SwmfConfigDocumentSymbolProvider()
+    )
+  );  
 
   let disposableRead                 = vscode.commands.registerCommand('executeTargetsRead'         , executeTargetsRead         );
   let disposableLoad                 = vscode.commands.registerCommand('executeTargetsLoad'         , executeTargetsLoad         );

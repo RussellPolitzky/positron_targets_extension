@@ -1,8 +1,17 @@
 import * as vscode from 'vscode';
 
-
-class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
+/**
+ * Provides document symbols for R files, recognizing specific comment patterns
+ * and organizes them into a hierarchical structure.
+ */
+class TargetsSymbolProvider implements vscode.DocumentSymbolProvider {
     
+    /**
+     * Provides document symbols for the given document.
+     * @param document The document in which to provide symbols.
+     * @param token A cancellation token.
+     * @returns A promise that resolves to an array of document symbols.
+     */
     public provideDocumentSymbols(
         document: vscode.TextDocument,
         token: vscode.CancellationToken): Promise<vscode.DocumentSymbol[]> {
@@ -58,7 +67,10 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
     }
 }
 
-
+/**
+ * Activates the document symbol provider for R files.
+ * @param context The extension context.
+ */
 export function activate_document_style_provider(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.languages.registerDocumentSymbolProvider(
@@ -66,7 +78,7 @@ export function activate_document_style_provider(context: vscode.ExtensionContex
                 scheme: "file", 
                 language: "r"
             }, 
-            new SwmfConfigDocumentSymbolProvider()
+            new TargetsSymbolProvider()
         ) 
     );
 }

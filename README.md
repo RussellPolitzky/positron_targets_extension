@@ -1,6 +1,6 @@
 # Targets Helper
 
-Targets Helper is a Positron extension designed to enhance productivity when working with the `targets` package in R. This extension provides commands to execute various `targets` functions directly from the editor, making it easier to manage and run your data pipelines.
+Targets Helper is a Positron extension designed to enhance productivity when working with the `targets` package in R. This extension provides commands to execute various `targets` functions directly from the editor, making it easier to manage and run your data pipelines. Additionally, it includes a document symbol provider to recognize specific comment patterns in R files and organize them into a hierarchical structure.
 
 ## Features
 
@@ -10,6 +10,16 @@ Targets Helper is a Positron extension designed to enhance productivity when wor
 - Execute `targets::tar_make()` with debugging on selected target.
 - Execute `targets::tar_make()` to build the whole pipeline.
 - Execute `targets::tar_watch()` to monitor targets.
+- Provides document symbols for R files, recognizing specific comment patterns and organizes them into a hierarchical structure.
+
+- Document Symbol Provider
+
+The document symbol provider recognizes specific comment patterns in R files and organizes them into a hierarchical structure. This helps in navigating and understanding the structure of your R scripts.
+
+- **Comment Patterns**:
+  - Level 1: `#tgt label -`
+  - Level 2: `##tgt label -`
+  - Level 3: `###tgt label -`
 
 ## Requirements
 

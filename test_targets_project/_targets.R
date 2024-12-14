@@ -50,15 +50,23 @@ tar_source()
 
 # Replace the target list below with your own:
 list(
+  #tgt Data_Aquisition --------------------------------------------------
+  ##tgt data ------------------------------------------------------------ 
   tar_target(
     name    = data,
     command = tibble(x = rnorm(100), y = rnorm(100)),
     format = "qs" # Efficient storage for general data objects.
   ),
-  #------------------------------------------------------------------
-  # Test------------------------------------------------------------ 
+  #tgt Modelling ---------------------------------------------------------
+  ##tgt model ------------------------------------------------------------ 
   tar_target(
     name    = model,
     command = coefficients(lm(y ~ x, data = data))
   )
+  ###tgt sub_model_task -------------------------------------------------
 )
+
+# Level 1 -----------------
+## Level 2 -----------------
+### Level 3 -----------------
+

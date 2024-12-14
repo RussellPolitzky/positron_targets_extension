@@ -1,0 +1,136 @@
+{
+  "name": "targets-helpers",
+  "displayName": "Targets Helpers",
+  "description": "Targets productivity helpers",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:executeTargetsRead",
+    "onCommand:executeTargetsLoad",
+    "onCommand:executeTargetsMakeSelected",
+    "onCommand:executeTargetsMake",
+    "onCommand:executeTargetsDebugSelected"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "executeTargetsRead",
+        "title": "Execute targets::tar_read($selected_text$)"
+      },
+      {
+        "command": "executeTargetsLoad",
+        "title": "Execute targets::tar_load($selected_text$)"
+      },
+      {
+        "command": "executeTargetsMakeSelected",
+        "title": "Execute targets::tar_make($selected_text$)"
+      },
+      {
+        "command": "executeTargetsMake",
+        "title": "Execute targets::tar_make()"
+      },
+      {
+        "command": "executeTargetsDebugSelected",
+        "title": "Execute targets::tar_make(names = $selected_text$, callr_function = NULL)"
+      },
+      {
+        "command": "executeTargetsWatch",
+        "title": "Execute targets::tar_watch()"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "executeTargetsRead",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "executeTargetsLoad",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "executeTargetsMakeSelected",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "executeTargetsMake",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "executeTargetsDebugSelected",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "executeTargetsWatch",
+          "when": "editorTextFocus"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "executeTargetsRead",
+        "key": "ctrl+shift+t ctrl+shift+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "executeTargetsLoad",
+        "key": "ctrl+shift+t ctrl+shift+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "executeTargetsMakeSelected",
+        "key": "ctrl+shift+t ctrl+shift+m",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "executeTargetsMake",
+        "key": "ctrl+shift+t ctrl+shift+f",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "executeTargetsDebugSelected",
+        "key": "ctrl+shift+t ctrl+shift+d",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "executeTargetsWatch",
+        "key": "ctrl+shift+t ctrl+shift+w",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/targets-helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/targets-helper/issues"
+  },
+  "homepage": "https://github.com/yourusername/targets-helper#readme",
+  "publisher": "Risk Transformation and Clearing",
+  "icon": "images/targets-helpers-icon.png"  }

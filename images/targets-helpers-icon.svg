@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="250" fill="#4A90E2"/>
+  
+  <!-- Target/Bullseye -->
+  <circle cx="256" cy="256" r="180" fill="white"/>
+  <circle cx="256" cy="256" r="140" fill="#4A90E2"/>
+  <circle cx="256" cy="256" r="100" fill="white"/>
+  <circle cx="256" cy="256" r="60" fill="#4A90E2"/>
+  <circle cx="256" cy="256" r="20" fill="white"/>
+  
+  <!-- Stylized Arrow/Workflow -->
+  <path 
+    d="M256 100 L300 200 L212 200 Z" 
+    fill="#FFFFFF" 
+    transform="rotate(45 256 150)"
+  />
+</svg>

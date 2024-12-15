@@ -18,7 +18,7 @@ class TargetsSymbolProvider implements vscode.DocumentSymbolProvider {
         return new Promise((resolve, reject) => {
 
             let symbols: vscode.DocumentSymbol[] = [];
-            const regex = /^\s*(?<level_indicator>#{1,3})tgt\s*(?<label>\w*)\s*-{4}/;
+            const regex = /^[^#]*(?<level_indicator>#+)tgt\s*(?<label>[\w\s]*)/;
 
             let currentLevel1Symbol: vscode.DocumentSymbol | null = null;
             let currentLevel2Symbol: vscode.DocumentSymbol | null = null;

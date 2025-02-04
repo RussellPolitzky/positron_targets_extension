@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onLanguage:R"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -128,5 +128,5 @@
     "url": "https://github.com/yourusername/targets-helper/issues"
   },
   "homepage": "https://github.com/yourusername/targets-helper#readme",
-  "publisher": "Risk Transformation and Clearing",
+  "publisher": "Russell Politzky",
   "icon": "images/targets-helpers-icon.png"  }

@@ -24,7 +24,8 @@ class TargetsSymbolProvider implements vscode.DocumentSymbolProvider {
             let currentLevel2Symbol: vscode.DocumentSymbol | null = null;
 
             for (let i = 0; i < document.lineCount; i++) {
-                const line = document.lineAt(i);
+
+                const line  = document.lineAt(i);
                 const match = regex.exec(line.text);
 
                 if (match && match.groups) {

@@ -7,7 +7,9 @@
     "vscode": "^1.93.0"
   },
   "categories": [
-    "Other"
+    "Data Science",
+    "Programming Languages",
+    "Formatters"
   ],
   "activationEvents": [
     "onLanguage:R"
@@ -107,26 +109,33 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "mocha --require ts-node/register src/test/*.test.ts"
   },
   "devDependencies": {
-    "@types/vscode": "^1.93.0",
-    "@types/mocha": "^10.0.9",
+    "@types/chai": "^5.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.93.0",
     "@typescript-eslint/eslint-plugin": "^8.10.0",
     "@typescript-eslint/parser": "^8.7.0",
-    "eslint": "^9.13.0",
-    "typescript": "^5.6.3",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "chai": "^5.2.0",
+    "eslint": "^9.13.0",
+    "mocha": "^11.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "vscode-test": "^1.6.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/targets-helper.git"
+    "url": "https://github.com/RussellPolitzky/positron_targets_extension.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/targets-helper/issues"
+    "url": "https://github.com/RussellPolitzky/positron_targets_extension/issues"
   },
-  "homepage": "https://github.com/yourusername/targets-helper#readme",
+  "homepage": "https://github.com/RussellPolitzky/positron_targets_extension#readme.md",
   "publisher": "Russell Politzky",
-  "icon": "images/targets-helpers-icon.png"  }
+  "icon": "images/targets-helpers-icon.png"
+}

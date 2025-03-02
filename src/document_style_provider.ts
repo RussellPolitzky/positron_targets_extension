@@ -68,6 +68,7 @@ class TargetsSymbolProvider implements vscode.DocumentSymbolProvider {
     }
 }
 
+
 /**
  * Activates the document symbol provider for R files.
  * @param context The extension context.

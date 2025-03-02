@@ -14,7 +14,7 @@ Targets Helper is a Positron extension designed to enhance productivity when wor
 
 - Document Symbol Provider
 
-The document symbol provider recognizes specific comment patterns in R files and organizes them into a hierarchical structure. This helps in navigating and understanding the structure of your R scripts.
+The document symbol provider recognizes specific comment patterns in R files and organizes them into a hierarchical structure. This helps in navigating and understanding the structure of your R targets pipelines.  This features is activated after any of the above commands are executed.
 
 - **Comment Patterns**:
   - Level 1: `#tgt label -`

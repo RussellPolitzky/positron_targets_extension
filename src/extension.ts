@@ -8,6 +8,7 @@ import { activate_targets_commands        } from './targets_execution';
  * @param context - The extension context.
  */
 export function activate(context: vscode.ExtensionContext): void {
+  console.log("Targets helper extension is now active!");
   activate_document_style_provider(context);
   activate_targets_commands(context);
 }

@@ -15,6 +15,7 @@ class TargetsSymbolProvider implements vscode.DocumentSymbolProvider {
     public provideDocumentSymbols(
         document: vscode.TextDocument,
         token: vscode.CancellationToken): Promise<vscode.DocumentSymbol[]> {
+        console.log("provideDocumentSymbols called for document: ", document.uri.fsPath);
         return new Promise((resolve, reject) => {
 
             let symbols: vscode.DocumentSymbol[] = [];
@@ -74,6 +75,7 @@ class TargetsSymbolProvider implements vscode.DocumentSymbolProvider {
  * @param context The extension context.
  */
 export function activate_document_style_provider(context: vscode.ExtensionContext) {
+    console.log("Attempting to register DocumentSymbolProvider...");
     context.subscriptions.push(
         vscode.languages.registerDocumentSymbolProvider(
             {
@@ -83,4 +85,5 @@ export function activate_document_style_provider(context: vscode.ExtensionContex
             new TargetsSymbolProvider()
         ) 
     );
+    console.log("DocumentSymbolProvider registered.");
 }

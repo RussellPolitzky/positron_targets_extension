@@ -2,7 +2,7 @@
   "name": "targets-helpers",
   "displayName": "Targets Helpers",
   "description": "Targets productivity helpers",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.93.0"
   },
@@ -136,6 +136,6 @@
     "url": "https://github.com/RussellPolitzky/positron_targets_extension/issues"
   },
   "homepage": "https://github.com/RussellPolitzky/positron_targets_extension#readme.md",
-  "publisher": "Russell Politzky",
+  "publisher": "russell-politzky",
   "icon": "images/targets-helpers-icon.png"
 }

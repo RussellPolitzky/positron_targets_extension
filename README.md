@@ -76,10 +76,36 @@ The document symbol provider recognizes specific comment patterns in R files and
 
 No additional configuration is required. The extension uses the default settings provided by Positron and the `targets` package in R.
 
-## Known Issues
+## Development
 
-- The extension requires the `targets` package to be installed in your R environment.
-- Ensure that the Positron API is available if you are using it for R code execution.
+### Requirements
+
+- [Node.js](https://nodejs.org/) (which includes npm)
+
+### Building from Source
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/RussellPolitzky/positron_targets_extension.git
+    cd positron_targets_extension
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Compile the TypeScript code:
+    ```bash
+    npm run compile
+    ```
+
+4.  Package the extension into a `.vsix` file:
+    ```bash
+    npm install -g @vscode/vsce
+    vsce package
+    ```
+    This will create a `targets-helpers-1.0.0.vsix` file (the version may vary), which you can then install in Positron.
 
 ## Release Notes
 

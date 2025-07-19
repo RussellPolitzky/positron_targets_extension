@@ -83,7 +83,7 @@ No additional configuration is required. The extension uses the default settings
 
 ## Release Notes
 
-### 0.0.1
+### 1.0.0
 
 Initial release of Targets Helper.
 

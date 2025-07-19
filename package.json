@@ -109,7 +109,7 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "mocha --require ts-node/register src/test/*.test.ts"
+    "test": "vscode-test"
   },
   "devDependencies": {
     "@types/chai": "^5.0.1",

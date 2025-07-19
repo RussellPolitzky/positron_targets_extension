@@ -10,7 +10,7 @@ library(targets)
 # Set target options:
 tar_option_set(
   packages = c("tibble") # Packages that your targets need for their tasks.
-  # format = "qs", # Optionally set the default storage format. qs is fast.
+  format = "qs", # Optionally set the default storage format. qs is fast.
   #
   # Pipelines that take a long time to run may benefit from
   # optional distributed computing. To use this capability
@@ -53,8 +53,7 @@ list(
   #tgt Data_Aquisition --------------------------------------------------
   tar_target( 
     name    = data, ##tgt data
-    command = tibble(x = rnorm(100), y = rnorm(100)),
-    format = "qs" # Efficient storage for general data objects.
+    command = tibble(x = rnorm(100), y = rnorm(100))
   ),
   
   #tgt Modelling ---------------------------------------------------------
